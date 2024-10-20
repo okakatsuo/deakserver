@@ -1,0 +1,128 @@
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000; /* 背景を黒に設定 */
+    color: #ffffff; /* 文字色を白に設定 */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+}
+
+/* 固定ヘッダー */
+header {
+    background: rgba(255, 255, 255, 0.1); /* ヘッダーを半透明白 */
+    backdrop-filter: blur(5px);
+    width: 300px; /* ヘッダーの幅を300pxに設定 */
+    padding: 20px 0;
+    text-align: left; /* テキストを左揃え */
+    position: fixed; /* ヘッダーを固定 */
+    top: 0;
+    left: 0; /* 左側に配置 */
+    height: 100%; /* ヘッダーを縦に伸ばす */
+    z-index: 1000; /* ヘッダーを前面に表示 */
+    box-shadow: 4px 0 20px rgba(255, 255, 255, 0.3); /* ヘッダーに影を追加 */
+    padding-left: 30px; /* 左側の余白を追加 */
+}
+
+/* タイトル */
+header h1 {
+    font-size: 1.5rem; /* フォントサイズを調整 */
+    margin-bottom: 20px; /* タイトルとナビゲーションの間に余白 */
+}
+
+.fancy-title {
+    font-family: 'Raleway', sans-serif; /* おしゃれなフォントを使用 */
+    font-size: 2.5rem; /* フォントサイズを調整 */
+    color: #ffffff; /* MINECRAFTの色 */
+}
+
+.highlight-title {
+    font-size: 2.5rem; /* サイズを調整 */
+    color: #feb47b; /* Deakの色 */
+    font-weight: bold; /* Deakを目立たせるために太字 */
+}
+
+.normal-title {
+    font-size: 2.5rem; /* サイズを調整 */
+    color: #ffffff; /* SERVERの色 */
+}
+
+/* ナビゲーション */
+nav {
+    display: flex;
+    flex-direction: column; /* 縦に配置 */
+}
+
+nav a {
+    color: #ffffff; /* リンクの色 */
+    text-decoration: none;
+    margin: 10px 0; /* リンクの上下の余白 */
+    font-size: 1.2rem;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease; /* ホバー時のアニメーションを追加 */
+}
+
+nav a:hover {
+    color: #feb47b; /* ホバー時の文字色 */
+    transform: scale(1.1); /* ホバー時に拡大 */
+}
+
+/* コンテナ */
+.container {
+    margin-left: 320px; /* ヘッダーの幅分の余白 */
+    width: calc(100% - 340px); /* コンテナの幅を調整し、右側に余白を追加 */
+    padding-top: 20px; /* 上部余白 */
+    flex: 1; /* コンテナを伸ばしてフッターを下に押し込む */
+    padding-left: 30px; /* コンテンツの左側に余白を追加 */
+}
+
+/* セクションのスタイル */
+.section {
+    padding: 40px 20px; /* 上下余白を調整 */
+    text-align: center;
+    min-height: calc(100vh - 20px); /* ヘッダーの高さを引いた値で最小高さを調整 */
+    background-color: #1a1a1a; /* セクションの背景色 */
+    border-radius: 10px; /* セクションに角丸を追加 */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* セクションに影を追加 */
+    margin-bottom: 20px; /* セクション間の余白 */
+    opacity: 0; /* 初期状態を非表示に */
+    transform: translateY(20px); /* 初期位置を下にずらす */
+    transition: opacity 1s ease, transform 1s ease; /* スムーズな表示アニメーション */
+    border: 0.5px solid #6d6d6d; /* 各セクションのデモ用境界線 */
+}
+
+.section.visible {
+    opacity: 1; /* スクロール時に表示 */
+    transform: translateY(0); /* 元の位置に戻す */
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px; /* タイトル上部の余白を狭くする */
+    color: #ffffff; /* 見出しの色 */
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #dddddd; /* テキストの色 */
+}
+
+/* フッター */
+footer {
+    background-color: #121212;
+    padding: 20px 0; /* 上下の余白を調整 */
+    text-align: center;
+    z-index: 500; /* フッターを前面に表示 */
+    position: relative; /* 相対位置を指定 */
+}
+
+footer p {
+    color: #ffffff; /* フッターの文字色 */
+}
